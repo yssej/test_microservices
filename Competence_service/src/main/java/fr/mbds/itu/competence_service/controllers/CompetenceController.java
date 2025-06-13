@@ -1,7 +1,6 @@
 package fr.mbds.itu.competence_service.controllers;
 
 import fr.mbds.itu.competence_service.dtos.CompetenceDTO;
-import fr.mbds.itu.competence_service.services.CompetenceService;
 import fr.mbds.itu.competence_service.services.CompetenceServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
