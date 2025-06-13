@@ -30,6 +30,15 @@ public class CompetenceServiceApplication {
                         .build(),
                 Competence.builder()
                         .nom("nom3")
+                        .build(),
+                Competence.builder()
+                        .nom("nom4")
+                        .build(),
+                Competence.builder()
+                        .nom("nom5")
+                        .build(),
+                Competence.builder()
+                        .nom("nom6")
                         .build()
             );
             competenceRepository.saveAll(competences);
