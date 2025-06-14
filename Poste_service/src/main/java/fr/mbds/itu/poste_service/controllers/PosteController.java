@@ -22,4 +22,8 @@ public class PosteController {
     public PosteDTO findById(@PathVariable String id) {
         return posteService.findById(id);
     }
+    @GetMapping("/poste/competence/{id}")
+    public List<PosteDTO> findByCompetenceId(@PathVariable Long id) {
+        return posteService.findByCompetenceId(id);
+    }
 }

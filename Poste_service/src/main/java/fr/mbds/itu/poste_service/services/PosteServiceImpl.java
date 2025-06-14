@@ -24,15 +24,7 @@ public class PosteServiceImpl implements PosteService {
     }
     @Override
     public List<PosteDTO> findAll() {
-        List<PosteDTO> postes = posteRepository.findAll().stream().map(posteMapper::toDTO)
-                .collect(Collectors.toList());
-        for(PosteDTO posteDTO : postes) {
-            List<Competence> posteCompetences = new ArrayList<>();
-            for(Long id : posteDTO.getCompetenceIds())
-                posteCompetences.add(competenceClient.getCompetenceById(id));
-            posteDTO.setCompetences(posteCompetences);
-        }
-        return postes;
+        return posteRepository.findAll().stream().map(posteMapper::toDTO).collect(Collectors.toList());
     }
 
     @Override
@@ -46,5 +38,10 @@ public class PosteServiceImpl implements PosteService {
             return posteDTO;
         }
         return null;
+    }
+
+    @Override
+    public List<PosteDTO> findByCompetenceId(Long competenceId) {
+        return posteRepository.findPosteWithOnlyOneCompetence(competenceId).stream().map(posteMapper::toDTO).collect(Collectors.toList());
     }
 }

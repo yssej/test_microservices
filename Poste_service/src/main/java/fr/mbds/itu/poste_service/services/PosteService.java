@@ -7,4 +7,5 @@ import java.util.List;
 public interface PosteService {
     List<PosteDTO> findAll();
     PosteDTO findById(String id);
+    List<PosteDTO> findByCompetenceId(Long competenceId);
 }
