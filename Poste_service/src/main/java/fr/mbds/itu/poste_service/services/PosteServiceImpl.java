@@ -37,6 +37,14 @@ public class PosteServiceImpl implements PosteService {
 
     @Override
     public PosteDTO findById(String id) {
-        return posteRepository.findById(id).map(posteMapper::toDTO).orElse(null);
+        PosteDTO posteDTO = posteRepository.findById(id).map(posteMapper::toDTO).orElse(null);
+        if(posteDTO != null) {
+            List<Competence> posteCompetences = new ArrayList<>();
+            for(Long Id : posteDTO.getCompetenceIds())
+                posteCompetences.add(competenceClient.getCompetenceById(Id));
+            posteDTO.setCompetences(posteCompetences);
+            return posteDTO;
+        }
+        return null;
     }
 }
