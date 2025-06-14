@@ -15,4 +15,8 @@ public class PosteDTO {
     private String nom;
     private List<Long> competenceIds;
     private List<Competence> competences;
+
+    public void addCompetence(Competence competence) {
+        competences.add(competence);
+    }
 }

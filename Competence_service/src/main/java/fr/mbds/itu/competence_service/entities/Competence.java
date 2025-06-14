@@ -1,10 +1,10 @@
 package fr.mbds.itu.competence_service.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import fr.mbds.itu.competence_service.models.Poste;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter @Setter @Builder
@@ -15,5 +15,7 @@ public class Competence {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
+    @Transient
+    private List<Poste> postes;
 
 }

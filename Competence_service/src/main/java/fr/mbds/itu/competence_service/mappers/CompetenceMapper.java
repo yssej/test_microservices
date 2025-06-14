@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class CompetenceMapper {
     public CompetenceDTO toDTO(Competence competence) {
-        return new CompetenceDTO(competence.getId(), competence.getNom());
+        return new CompetenceDTO(competence.getId(), competence.getNom(), competence.getPostes());
     }
     public Competence toEntity(CompetenceDTO competenceDTO) {
         if(competenceDTO != null)
-            return new Competence(competenceDTO.getId(), competenceDTO.getNom());
+            return new Competence(competenceDTO.getId(), competenceDTO.getNom(), competenceDTO.getPostes());
         return null;
     }
 }
