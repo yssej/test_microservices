@@ -10,7 +10,7 @@ import java.util.List;
 @FeignClient(name = "poste", url = "localhost:8080")
 public interface PosteClient {
     @GetMapping("/poste/{id}")
-    public Poste getPoste(@PathVariable Long id);
+    Poste getPoste(@PathVariable Long id);
     @GetMapping("/poste/competence/{id}")
-    public List<Poste> getPosteByCompetenceId(@PathVariable Long id);
+    List<Poste> getPosteByCompetenceId(@PathVariable Long id);
 }
