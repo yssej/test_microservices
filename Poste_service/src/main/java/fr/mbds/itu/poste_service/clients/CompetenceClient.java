@@ -10,7 +10,7 @@ import java.util.List;
 @FeignClient(name = "competence", url = "localhost:8081")
 public interface CompetenceClient {
     @GetMapping("/skill/{id}")
-    public Competence getCompetenceById(@PathVariable Long id);
+    Competence getCompetenceById(@PathVariable Long id);
     @GetMapping("/skills")
-    public List<Competence> getAllCompetences();
+    List<Competence> getAllCompetences();
 }
