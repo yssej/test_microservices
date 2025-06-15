@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Competence_service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Competence_service.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Discovery_service/Discovery_service.iml" filepath="$PROJECT_DIR$/Discovery_service/Discovery_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Poste_service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Poste_service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/test_microservices.iml" filepath="$PROJECT_DIR$/test_microservices.iml" />
     </modules>
