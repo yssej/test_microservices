@@ -1,18 +1,18 @@
-spring:
-  application:
-    name: Gateway_service
-  cloud:
-    gateway:
-      server:
-        webflux:
-          routes:
-            - id: Poste_service
-              uri: http://localhost:8080/
-              predicates:
-                - Path=/postes/**,/poste/**,/poste/competence/**
-            - id: Competence_service
-              uri: http://localhost:8081/
-              predicates:
-                - Path=/skills/**,/skill/**
-server:
-  port: 8888
+#spring:
+#  application:
+#    name: Gateway_service
+#  cloud:
+#    gateway:
+#      server:
+#        webflux:
+#          routes:
+#            - id: Poste_service
+#              uri: http://localhost:8080/
+#              predicates:
+#                - Path=/postes/**,/poste/**,/poste/competence/**
+#            - id: Competence_service
+#              uri: http://localhost:8081/
+#              predicates:
+#                - Path=/skills/**,/skill/**
+#server:
+#  port: 8888

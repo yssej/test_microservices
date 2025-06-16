@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "poste", url = "localhost:8080")
+@FeignClient(name = "POSTE")
 public interface PosteClient {
     @GetMapping("/poste/{id}")
     Poste getPoste(@PathVariable Long id);
