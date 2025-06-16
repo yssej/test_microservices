@@ -1,6 +1,5 @@
 package fr.mbds.itu.competence_service.clients;
 
-import fr.mbds.itu.competence_service.entities.Competence;
 import fr.mbds.itu.competence_service.models.Poste;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.cloud.openfeign.FeignClient;
