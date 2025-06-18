@@ -1,0 +1,54 @@
+services:
+
+  discovery-service:
+    build: ./Discovery_service
+    ports:
+      - "8761:8761"
+    networks:
+      - spring-net
+
+  config-service:
+    build:
+      context: .
+      dockerfile: Config_service/Dockerfile
+    ports:
+      - "9999:9999"
+    depends_on:
+      - discovery-service
+    networks:
+      - spring-net
+
+  gateway-service:
+    build: ./Gateway_service
+    depends_on:
+      - discovery-service
+    ports:
+      - "8888:8888"
+    networks:
+      - spring-net
+
+
+  competence-service:
+    build: ./Competence_service
+    depends_on:
+      - discovery-service
+      - config-service
+    ports:
+      - "8081:8081"
+    networks:
+      - spring-net
+
+  poste-service:
+    build: ./Poste_service
+    depends_on:
+      - discovery-service
+      - gateway-service
+      - config-service
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-net
+
+networks:
+  spring-net:
+    driver: bridge

@@ -7,10 +7,15 @@ spring:
     console:
       enabled: true
   config:
-    import: optional:configserver:http://localhost:9999
+    import: optional:configserver:http://config-service:9999
 
 server:
   port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka/
 
 management:
   endpoints:
