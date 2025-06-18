@@ -10,12 +10,12 @@ import java.util.Map;
 @RestController
 @RefreshScope
 public class ConfigTestController {
-    @Value("${a}")
-    private int a;
-    @Value("${b}")
-    private int b;
-    @Value("${c}")
-    private int c;
+//    @Value("${a}")
+    private int a = 10;
+//    @Value("${b}")
+    private int b = 20;
+//    @Value("${c}")
+    private int c = 30;
 
     @GetMapping("/testConfig")
     public Map<String, Integer> testConfig() {
